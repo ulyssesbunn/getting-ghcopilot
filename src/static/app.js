@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
               messageDiv.classList.remove("hidden");
 
               if (response.ok) {
-                await fetchActivities();
+                window.setTimeout(() => window.location.reload(), 700);
               } else {
                 removeButton.disabled = false;
               }
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
         signupForm.reset();
-        await fetchActivities();
+        window.setTimeout(() => window.location.reload(), 700);
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";
